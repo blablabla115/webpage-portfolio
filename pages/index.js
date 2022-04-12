@@ -6,6 +6,10 @@ import {
   Heading,
   Image,
   Link,
+  List,
+  ListItem,
+  SimpleGrid,
+  Icon,
   useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon} from '@chakra-ui/icons'
@@ -13,6 +17,14 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
+import { GridItem } from '../components/grid-item'
+import {
+  IoLogoTwitter,
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoDiscord
+} from 'react-icons/io5'
+import thumbExample from '../public/images/works/street_anime.jpg'
 
 const Page = () => {
   return (
@@ -101,6 +113,64 @@ const Page = () => {
             </Link>
             , Hacker
           </Paragraph>
+        </Section>
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            On the web
+          </Heading>
+          <List>
+            <ListItem>
+              <Link href="" target="_blank">
+                <Button 
+                  variant="ghost"
+                  colorScheme="teal" 
+                  leftIcon={<Icon as={IoLogoGithub} />}
+                >
+                  @Craftzman
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="" target="_blank">
+                <Button 
+                  variant="ghost"
+                  colorScheme="teal" 
+                  leftIcon={<Icon as={IoLogoTwitter} />}
+                >
+                  @Twitter
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="" target="_blank">
+                <Button 
+                  variant="ghost"
+                  colorScheme="teal" 
+                  leftIcon={<Icon as={IoLogoInstagram} />}
+                >
+                  @Instagram
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="" target="_blank">
+                <Button 
+                  variant="ghost"
+                  colorScheme="teal" 
+                  leftIcon={<Icon as={IoLogoDiscord} />}
+                >
+                  @Discord
+                </Button>
+              </Link>
+            </ListItem>
+          </List>
+          <SimpleGrid columns={[1,2,2]} gap={6}>
+            <GridItem 
+              href="" 
+              thumbnail={thumbExample} 
+              title="Example" 
+            />
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>
